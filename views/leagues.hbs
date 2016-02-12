@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div>
+                <ul class="nav nav-pills label">
+                    <li><a href="../favourites">Favourites</a></li>
+                </ul>
+            </div>
+            <ul>
+                {{#each leagues}}
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <a href="./leagues/{{id}}">{{league}}</a></span> {{caption}}
+                            </h3>
+                        </div>
+                    </div>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+
+

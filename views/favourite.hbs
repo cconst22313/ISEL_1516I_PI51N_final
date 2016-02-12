@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="text-muted">{{favourite.id}}</h2>
+            <div>
+                <ul class="nav nav-pills label">
+                    <li><a href="../favourites">Favourites</a></li>
+                    <li><a href="../leagues">Leagues</a></li>
+                </ul>
+            </div>
+            {{#each favourite.teams}}
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <a href="/teams/{{id}}">{{shortName}}</a>
+                        </h3>
+                    </div>
+                    <div class="row">
+                        <div class="panel-body col-sm-4">
+                            {{name}}
+                        </div>
+                        <div class="panel-body col-sm-4">
+                            <a href="/teams/{{id}}/nextfixtures?nrfixtures={{../favourite.games}}&favourite={{../favourite.id}}">Fixtures</a>
+                        </div>
+                        <div class="panel-body col-sm-4">
+                            <img src="{{crestUrl}}" class="img-thumbnail" style="width: 100px; height: 100px;"/>
+                        </div>
+
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+        <!--Form Data... may be replaced with hbs...-->
+        {{#unless favourite.disabled}}
+            <div class="col-md-2">
+            <form method="PUT" action="/favourite/{{favourite.id}}" class="form-horizontal">
+                <fieldset>
+                    <legend>Edit Group:</legend>
+                    <div class="form-group">
+                        <!--<label for="groupName">GroupName</label>-->
+                        <input id="groupName"
+                               name="groupName"
+                               class="form-control" required
+                               value="{{favourite.id}}"
+                               type="hidden" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="teams">Teams:</label>
+                        <select name="teams" id="teams" multiple="multiple">
+                            {{#each teamsDD}}
+                                <option value={{id}} {{#if selected}}selected="selected"{{/if}} >{{name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="games">Number of Games to show:</label>
+                        <input type="number" min="1" id="games" name="games" class="form-control" value="{{favourite.games}}">
+                    </div>
+
+                </fieldset>
+                <input type="submit" id="submit-group" value="Update Favourite" class="btn btn-primary"  formmethod="POST"/>
+            </form>
+        </div>
+        {{/unless}}
+    </div>
+</div>
+

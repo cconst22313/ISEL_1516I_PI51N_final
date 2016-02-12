@@ -1,0 +1,5 @@
+{
+  "TODO": { "panelClass": "panel-danger", "iconClass": "glyphicon-remove"},
+  "PROGRESS": { "panelClass": "panel-warning", "iconClass": "glyphicon-road"},
+  "DONE": { "panelClass": "panel-success", "iconClass": "glyphicon-ok"}
+}

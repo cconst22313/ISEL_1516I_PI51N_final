@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div>
+                <ul class="nav nav-pills label">
+                    <li><a href="../leagues">League List</a></li>
+                    <li><a href="./{{league.id}}/fixtures">Fixtures</a></li>
+                    <li><a href="./{{league.id}}/leagueTables">League Table</a></li>
+                    <li><a href="./{{league.id}}/teams">Team List</a></li>
+                </ul>
+            </div>
+            <article >
+                <div class="panel panel-warning ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                                {{league.caption}}
+                        </h3>
+                    </div>
+
+                <dl class="dl-horizontal panel-body">
+                    <dt>League Id:</dt><dd><a href="./{{league.league}}">{{league.id}}</a></dd>
+                    <dt>League Code:</dt><dd><a href="./{{league.league}}">{{league.league}}</a></dd>
+                    <dt>Year:</dt><dd>{{league.year}}</dd>
+                    <dt>Number of teams:</dt><dd>{{league.numberOfTeams}}</dd>
+                    <dt>Number of games:</dt><dd>{{league.numberOfGames}}</dd>
+                    <dt>Last Update:</dt><dd>{{league.lastUpdated}}</dd>
+                </dl>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>

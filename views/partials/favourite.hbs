@@ -1,0 +1,10 @@
+<div class="panel panel-warning" id={{id}}>
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <a href="/favourites/{{id}}">{{id}}</a>
+        </h3>
+        {{#unless disabled}}
+            <a class="delete-fav btn btn-primary" href="/favourites/{{id}}">Delete</a>
+        {{/unless}}
+    </div>
+</div>

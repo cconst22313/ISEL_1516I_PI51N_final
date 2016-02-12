@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="/multiselect/css/bootstrap-multiselect.css"/>
+    <title>Grupo 6 - Ficha 2</title>
+</head>
+<body class="bg-info">
+<div class="container">
+    <div class="row row-centered">
+        <section>
+            <div class="container">
+                <div class="row">
+                    {{#if user}}
+                        <div class="col-md-3">
+                            hello {{user}}!
+                            <a href="/logout">logout</a>
+                        </div>
+                    {{/if}}
+                    {{#unless user}}
+                        <div class="col-md-3">
+                            <a href="/login">login</a>
+                        </div>
+                    {{/unless}}
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row row-centered">
+                    <div class="col-md-8">
+                        <header class="page-header">
+                            <h2 class="text-muted">{{title}}</h2>
+                        </header>
+                        {{{ body }}}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        --> Put messages in here!
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">PI / 1516i / LI51N - Group 6</footer>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/multiselect/js/bootstrap-multiselect.js"></script>
+<!-- Initialize the plugin: -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#teams').multiselect();
+    });
+</script>
+</body>
+</html>
