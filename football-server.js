@@ -73,8 +73,9 @@ app.post("/favourite/:id",leaguesController.updateFavourite);
 app.post("/favourites/del/:id",leaguesController.deleteFavourite);
 app.delete("/favourites/:id",leaguesController.deleteFavouriteAPI);
 
+var port = process.env.PORT || 3000;
 server.on("listening", listeningConnections);
-//server.listen(5000);
+server.listen(port);
 
 /*
 //some initial data in favourites...
