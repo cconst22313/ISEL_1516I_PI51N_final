@@ -6,7 +6,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const debug = require("debug")("football-server");
 const hbs = require('hbs');
-const db = require("./app-logic/dbproxy");
 var session = require('express-session');
 const flash = require('connect-flash');  //message creating util
 const passport = require("passport");
@@ -77,37 +76,6 @@ var port = process.env.PORT || 3000;
 server.on("listening", listeningConnections);
 server.listen(port);
 
-/*
-//some initial data in favourites...
-db.init(db.COUCH_DB_FAV, function(){
-  var favourite = {
-    id:"OsMaiores",
-    teams:[
-        "711",
-        "583",
-        "495"
-    ],
-    games:5,
-    owner:"admin@admin.pt"
-  };
-
-  db.putDocument(db.COUCH_DB_FAV,favourite,undefined,function(){
-    debug("DB initied: ",db.COUCH_DB_FAV );
-  });
-} );
-
-//some initial data in user: admin@admin.pt
-db.init(db.COUCH_DB_USR, function(){
-    var document = {
-        id:"admin@admin.pt",
-        pass:"123456"
-    };
-
-    db.putDocument(db.COUCH_DB_USR,document,undefined,function(){
-        debug("DB initied: ", db.COUCH_DB_USR);
-    });
-} );
-*/
 function listeningConnections() {
   const address = server.address();
   debug("opened server on %j", address);

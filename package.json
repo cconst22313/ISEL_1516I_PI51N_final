@@ -5,7 +5,7 @@
   "main": "football-server.js",
   "scripts": {
     "start": "DEBUG=FootballAPI,user-model,user-controller,leagues-controller,leagues-model,favourites-controller,dbproxy,football-server&& node football-server.js",
-    "test": "set DEBUG=FootballAPI,user-model,user-controller,leagues-controller,leagues-model,favourites-controller,dbproxy,football-server&& node football-server.js"
+    "test": "set DEBUG=FootballAPI,user-model,user-controller,leagues-controller,leagues-model,favourites-controller,dbproxy,football-server&& nodemon football-server.js"
   },
   "author": "22313 - Carlos Constantino - Grupo 6",
   "license": "ISC",

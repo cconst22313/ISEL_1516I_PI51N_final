@@ -132,6 +132,13 @@ function getFavourites(req,rsp,next) {
             rsp.code = '404';
         //    rsp.end();
         }
+        favourites.sort(function(a,b){
+            if (a.id <b.id) //sort string ascending
+                return -1;
+            if (a.id > b.id)
+                return 1;
+            return 0; //default return value (no sorting)
+        });
         favourites.forEach(fav=> {
             debug(fav);
             debug(fav.owner);
