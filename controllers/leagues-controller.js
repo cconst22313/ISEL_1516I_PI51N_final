@@ -185,10 +185,12 @@ function getFavourite(req,rsp,next){
             if (fav.teams.some(elem=>{
                     if( elem.id === t.id ) return true;
                 })){
-                t.selected = 'selected="selected"';
                 t.selected = "selected";
                 debug("team selected",t.name);
+            } else {
+                t.selected = "";
             }
+
         });
         debug(fav.owner);
         if (fav.owner != req.user["name"]){
