@@ -6,7 +6,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const debug = require("debug")("football-server");
 const hbs = require('hbs');
-var session = require('express-session');
+const session = require('express-session');
 const flash = require('connect-flash');  //message creating util
 const passport = require("passport");
 
@@ -19,12 +19,15 @@ require("./helpers/view/view-helpers")();
 const leaguesController = require("./controllers/leagues-controller");
 const userController = require("./controllers/user-controller");
 
+//Express application
 const app = express();
-
+//Http server
 const server = http.createServer(app);
 
+//indicates that template engine is Handlebars
 app.set('view engine', 'hbs');
 
+//exposes public resources in the same path
 app.use("/", express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({ secret: 'some secret' }));
@@ -43,7 +46,6 @@ app.use("/",userController);
  * get and post functions that registers several routing...
  * The following uses explicit route declaration
  */
-//app.get("/", leaguesController.getLeagues);
 app.get("/", function(req,res,next){
     res.code = 302;
     res.redirect("/leagues");
@@ -64,7 +66,6 @@ app.use("/favourites*", function(req, rsp, next) {
 });
 app.get("/favourites/:id",leaguesController.getFavourite);
 app.get("/favourites",leaguesController.getFavourites);
-//app.post("/favourites",leaguesController.postFavourite);
 app.post("/favourites",leaguesController.postFavouriteAPI);
 app.post("/favourite/:id",leaguesController.updateFavourite);
 /*Não é nada bonito... mas sem AJAX e sem outros módulos, é o que se arranja

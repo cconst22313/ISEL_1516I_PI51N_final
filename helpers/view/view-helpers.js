@@ -1,7 +1,6 @@
 'use strict';
 
 const debug = require("debug")("view-helpers");
-const classes = require('./status-to-css-classes.json');
 const Handlebars = require('hbs');
 
 Handlebars.registerPartials(__dirname + '/views/partials');

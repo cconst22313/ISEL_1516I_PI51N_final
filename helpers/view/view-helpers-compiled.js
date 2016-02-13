@@ -1,7 +1,6 @@
 'use strict';
 
 var debug = require("debug")("view-helpers");
-var classes = require('./status-to-css-classes.json');
 var Handlebars = require('hbs');
 
 debug("Handlebars object " + Handlebars.registerHelper);

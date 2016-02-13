@@ -1,13 +1,32 @@
-<section class="jumbotron">
-    <article>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <ul>
+                <div class="form-control-static">
+                    <ul class="nav nav-pills label">
+                        <li><a href="../favourites">Favourites</a></li>
+                        <li><a href="/leagues">League List</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <article>
+                        <div class="panel panel-warning ">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    {{team.name}}
+                                </h3>
+                            </div>
+                            <dl class="dl-horizontal panel-body">
+                                <dt>Team code:</dt><dd>{{team.code}}</dd>
+                                <dt>Shortname:</dt><dd>{{team.shortName}}</dd>
+                                <dt>Market Value:</dt><dd>{{team.squadMarketValue}}</dd>
+                                <dd><img class="img-thumbnail" src="{{team.crestUrl}}" alt="{{team.name}}" height="250" width="250"/></dd>
+                            </dl>
+                        </div>
+                    </article>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>
 
-        <dl class="dl-horizontal">
-            <dt>Name:</dt><dd>{{team.name}}</dd>
-            <dt>Team code:</dt><dd>{{team.code}}</dd>
-            <dt>Shortname:</dt><dd>{{team.shortName}}</dd>
-            <dt>Market Value:</dt><dd>{{team.squadMarketValue}}</dd>
-            <dd><img class="img-thumbnail" src="{{team.crestUrl}}" alt="{{team.name}}" height="250" width="250"/></dd>
-        </dl>
-    </article>
-
-</section>
